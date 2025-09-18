@@ -344,7 +344,6 @@
             background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
             color: white;
             padding: 6rem 0;
-            /* Fallback for older browsers */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -353,7 +352,6 @@
             position: relative;
             overflow: hidden;
             margin-top: 3rem;
-            /* Pushes the hero section down by 3rem */
         }
 
         .affiliate-hero::before {
@@ -392,7 +390,44 @@
             text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Commission, Products, and Audience Cards */
+        /* Why Power Values Section */
+        .why-section {
+            background: linear-gradient(135deg, #fdf8fa 0%, #fff 100%);
+            padding: 4rem 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(94, 37, 58, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(94, 37, 58, 0.12);
+        }
+
+        .why-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .why-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Card Styles */
         .card {
             background: linear-gradient(135deg, #fdf8fa 0%, #fff 100%);
             padding: 2.5rem;
@@ -470,7 +505,7 @@
         }
 
         .commission-list li::before {
-            content: '✓';
+            content: '✔';
             position: absolute;
             left: 0;
             color: var(--secondary-accent);
@@ -491,8 +526,82 @@
             margin-top: 0.5rem;
         }
 
-        .products-section {
+        /* Membership Tiers */
+        .tiers-section {
             background-color: #fdf8fa;
+            padding: 4rem 0;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tier-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(94, 37, 58, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(94, 37, 58, 0.12);
+        }
+
+        .tier-card.featured {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .tier-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .tier-price span {
+            font-size: 1rem;
+            color: var(--dark-text);
+        }
+
+        .tier-commission {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        .products-section {
             padding: 3rem 0;
         }
 
@@ -510,7 +619,6 @@
         .product-image-container {
             width: 100%;
             height: 300px;
-            /* Or a fixed aspect ratio like padding-top: 100% */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -522,7 +630,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            /* Use 'contain' to fit the whole image without cropping */
             border-radius: 8px;
         }
 
@@ -543,7 +650,7 @@
 
         .audience-list {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             list-style: none;
             padding: 0;
@@ -555,7 +662,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .audience-icon {
@@ -574,7 +681,28 @@
         .audience-text {
             font-weight: 700;
             color: var(--primary-color);
-            font-size: 1.1rem;
+            font-size: 1rem;
+        }
+
+        .audience-description {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Cookie Policy Banner */
+        .cookie-banner {
+            background: var(--accent-color);
+            padding: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(94, 37, 58, 0.1);
+        }
+
+        .cookie-banner h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
 
         /* Call To Action Section */
@@ -709,16 +837,18 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .commission-grid {
+            .commission-grid,
+            .why-grid {
                 grid-template-columns: 1fr;
             }
 
-            .products-grid {
+            .products-grid,
+            .tiers-grid {
                 grid-template-columns: 1fr;
             }
 
             .audience-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
         }
@@ -750,6 +880,10 @@
 
             .product-card {
                 padding: 1rem;
+            }
+
+            .audience-list {
+                grid-template-columns: 1fr;
             }
 
             .audience-list li {
@@ -805,10 +939,40 @@
     <main>
         <section class="affiliate-hero animate-on-scroll">
             <div class="container affiliate-hero-content">
-                <h1>The Power Values Affiliate Program</h1>
-                <p>Join our mission and earn recurring and high-ticket commissions by helping people live lives of
-                    purpose, clarity, and alignment.</p>
+                <h1>Earn Recurring & High-Ticket Commissions by Sharing Transformation</h1>
+                <p>Join our mission to help people align with their values and build lives of purpose, clarity, and fulfillment while building your own sustainable income stream.</p>
                 <a href="#cta" class="button button-large">Start Earning Now</a>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Why Partner with Power Values?</h2>
+                    <p>Built on proven methodologies and backed by world-class expertise.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">🎓</span>
+                        <h3>Proven Leadership & Credibility</h3>
+                        <p>Created by Jonathan Keim, Chief Development Officer at Robbins-Madanes Training. Over a decade of experience designing curriculum for the world's top coaching programs distilled into Power Values.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">📚</span>
+                        <h3>Backed by 200+ Books & Trainings</h3>
+                        <p>Our AI Coach is powered by 5X the content of typical platforms. So advanced, we built our own system to handle the massive knowledge base.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">📈</span>
+                        <h3>High-Retention Membership Model</h3>
+                        <p>A 52-week framework keeps members engaged for an entire year, delivering consistent subscription revenue for you.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">💫</span>
+                        <h3>Emotional Stickiness = Long LTV</h3>
+                        <p>Once people feel the clarity and energy of values alignment, they don't want to go back — which means longer retention and higher payouts.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -816,39 +980,88 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2>Lucrative Commissions, Unmatched Value</h2>
-                    <p>Our program is designed for partners who to build a sustainable, high-impact business.</p>
+                    <p>Our program is designed for partners who want to build a sustainable, high-impact business. Earn 30% on all sales with our 60-day cookie policy.</p>
                 </div>
                 <div class="commission-grid">
                     <div class="card commission-card animate-on-scroll">
-                        <h3>High-Ticket Commissions</h3>
-                        <p>Earn significant commissions on our premium coaching programs, which are a perfect fit for
-                            high-value clients.</p>
+                        <h3>💎 High-Ticket Commissions</h3>
+                        <p>Earn significant commissions on our premium coaching programs. Just one high-ticket client can equal months (or even years) of membership commissions — and you keep both.</p>
                         <ul class="commission-list">
-                            <li><strong>Group Coaching:</strong> Earn up to $1,500 per person from our $5,000 programs.
-                            </li>
-                            <li><strong>Private Coaching:</strong> Earn up to $3,000 per person from our $10,000
-                                programs.</li>
+                            <li><strong>Group Coaching ($5,000/person):</strong> Earn up to $1,500 per enrollment</li>
+                            <li><strong>Private Coaching ($10,000/person):</strong> Earn up to $3,000 per enrollment</li>
                         </ul>
                     </div>
                     <div class="card commission-card animate-on-scroll">
-                        <h3>Recurring Revenue</h3>
-                        <p>Our membership model is built for high retention, giving you a predictable, passive income
-                            stream.</p>
+                        <h3>🔄 Recurring Revenue Stream</h3>
+                        <p>Build predictable, passive income with our high-retention membership model. Members stay engaged with our 52-week framework.</p>
                         <ul class="commission-list">
-                            <li><strong>Grounded Membership:</strong> Earn $8.10/month per referral.</li>
-                            <li><strong>Empowered Membership:</strong> Earn $14.10/month per referral.</li>
-                            <li><strong>Unstoppable Membership:</strong> Earn $29.10/month per referral.</li>
+                            <li><strong>Grounded ($27/mo):</strong> Earn $8.10/month per member</li>
+                            <li><strong>Empowered ($47/mo):</strong> Earn $14.10/month per member</li>
+                            <li><strong>Unstoppable ($97/mo):</strong> Earn $29.10/month per member</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="tiers-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Membership Tiers & Your Earnings</h2>
+                    <p>Three membership levels designed to meet people where they are on their transformation journey.</p>
+                </div>
+                <div class="tiers-grid">
+                    <div class="tier-card animate-on-scroll">
+                        <h3 class="tier-name">🌱 Grounded</h3>
+                        <div class="tier-price">$27<span>/month</span></div>
+                        <div class="tier-commission">You earn: $8.10/mo</div>
+                        <p>Perfect for those beginning their values journey</p>
+                        <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                            <li>✓ Core values assessment</li>
+                            <li>✓ Weekly alignment exercises</li>
+                            <li>✓ Community support</li>
+                        </ul>
+                    </div>
+                    <div class="tier-card featured animate-on-scroll">
+                        <h3 class="tier-name">⚡ Empowered</h3>
+                        <div class="tier-price">$47<span>/month</span></div>
+                        <div class="tier-commission">You earn: $14.10/mo</div>
+                        <p>For committed transformation seekers</p>
+                        <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                            <li>✓ Everything in Grounded</li>
+                            <li>✓ Advanced AI coaching</li>
+                            <li>✓ Monthly group sessions</li>
+                            <li>✓ Priority support</li>
+                        </ul>
+                    </div>
+                    <div class="tier-card animate-on-scroll">
+                        <h3 class="tier-name">🚀 Unstoppable</h3>
+                        <div class="tier-price">$97<span>/month</span></div>
+                        <div class="tier-commission">You earn: $29.10/mo</div>
+                        <p>Maximum transformation & results</p>
+                        <ul style="text-align: left; list-style: none; padding: 1rem 0;">
+                            <li>✓ Everything in Empowered</li>
+                            <li>✓ Weekly coaching calls</li>
+                            <li>✓ Custom action plans</li>
+                            <li>✓ Direct access to experts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cookie-banner">
+            <div class="container">
+                <h3>🍪 60-Day Cookie Policy</h3>
+                <p>Your referrals are tracked for a full 60 days, ensuring you get credit for all the value you bring to our community.</p>
+            </div>
+        </div>
+
         <section class="products-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2>Our Affiliate Products</h2>
-                    <p>You'll earn a **30% commission** on all sales with a 60-day cookie policy.</p>
+                    <h2>Your Affiliate Toolkit</h2>
+                    <p>Pre-sold through powerful funnel assets that build trust before subscription.</p>
                 </div>
                 <div class="products-grid">
                     <div class="card product-card animate-on-scroll">
@@ -856,28 +1069,42 @@
                             <img src="images/book-cover.png" alt="Power Values Book">
                         </div>
                         <h3>The Power Values Book</h3>
-                        <p>A bestseller that introduces the core concepts and framework of our methodology.</p>
+                        <p>Soon-to-be bestseller that introduces readers to values-based transformation.</p>
                     </div>
                     <div class="card product-card animate-on-scroll">
                         <div class="product-image-container">
-                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=The+Quiz" alt="The Quiz">
+                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=Values+Quiz" alt="Values Quiz">
                         </div>
-                        <h3>The Power Values Quiz</h3>
-                        <p>A free, entry-level resource that helps users discover their core values.</p>
+                        <h3>Viral Values Quiz</h3>
+                        <p>Free lead generation tool that helps people discover their core values.</p>
                     </div>
                     <div class="card product-card animate-on-scroll">
                         <div class="product-image-container">
-                            <img src="images/ThePowerValuesTrainingSeries_dark.png" alt="The Training Series">
+                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=AI+Coach" alt="AI Coach">
                         </div>
-                        <h3>The Training Series</h3>
-                        <p>A comprehensive video training that provides actionable steps for alignment.</p>
+                        <h3>AI Coaching Experience</h3>
+                        <p>Advanced AI that builds trust and demonstrates immediate value.</p>
                     </div>
                     <div class="card product-card animate-on-scroll">
                         <div class="product-image-container">
-                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=Memberships" alt="Memberships">
+                            <img src="images/ThePowerValuesTrainingSeries_dark.png" alt="Training Series">
                         </div>
-                        <h3>The Memberships</h3>
-                        <p>Our recurring revenue product, based on a 52-week framework for high retention.</p>
+                        <h3>Training Series</h3>
+                        <p>Comprehensive video training with actionable frameworks.</p>
+                    </div>
+                    <div class="card product-card animate-on-scroll">
+                        <div class="product-image-container">
+                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=52-Week+Framework" alt="52-Week Framework">
+                        </div>
+                        <h3>52-Week Framework</h3>
+                        <p>Year-long journey ensuring high retention and consistent commissions.</p>
+                    </div>
+                    <div class="card product-card animate-on-scroll">
+                        <div class="product-image-container">
+                            <img src="https://placehold.co/400x400/fdf8fa/5e253a?text=Affiliate+Resources" alt="Affiliate Resources">
+                        </div>
+                        <h3>Marketing Resources</h3>
+                        <p>Professional assets, swipe copy, and proven campaigns ready to use.</p>
                     </div>
                 </div>
             </div>
@@ -886,42 +1113,83 @@
         <section class="audience-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <h2>Who is this program for?</h2>
-                    <p>The Power Values offer resonates with a wide audience.</p>
+                    <h2>Your Perfect Audience Awaits</h2>
+                    <p>Power Values resonates with people seeking real transformation across all areas of life.</p>
                 </div>
                 <ul class="audience-list">
                     <li class="card animate-on-scroll">
-                        <div class="audience-icon">📖</div>
+                        <div class="audience-icon">🌱</div>
                         <span class="audience-text">Personal Development Enthusiasts</span>
+                        <p class="audience-description">People eager to make better decisions and align with their values</p>
                     </li>
                     <li class="card animate-on-scroll">
-                        <div class="audience-icon">🗣️</div>
-                        <span class="audience-text">Coaches & Consultants</span>
+                        <div class="audience-icon">📚</div>
+                        <span class="audience-text">Coaches & Professionals</span>
+                        <p class="audience-description">Life coaches, consultants, and HR leaders who benefit personally and professionally</p>
                     </li>
                     <li class="card animate-on-scroll">
-                        <div class="audience-icon">💼</div>
-                        <span class="audience-text">Professionals & Entrepreneurs</span>
+                        <div class="audience-icon">🚀</div>
+                        <span class="audience-text">Entrepreneurs & Leaders</span>
+                        <p class="audience-description">Executives and founders needing focus, energy, and strategic clarity</p>
                     </li>
                     <li class="card animate-on-scroll">
-                        <div class="audience-icon">🏆</div>
-                        <span class="audience-text">Leaders & Mentors</span>
-                    </li>
-                    <li class="card animate-on-scroll">
-                        <div class="audience-icon">🧘</div>
-                        <span class="audience-text">Those Seeking Alignment</span>
+                        <div class="audience-icon">🔥</div>
+                        <span class="audience-text">People Overcoming Burnout</span>
+                        <p class="audience-description">Finding freedom and renewed energy through values alignment</p>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Whole-Life Transformation</h2>
+                    <p>Members experience meaningful change across every dimension of their lives.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">💪</span>
+                        <h3>Health & Vitality</h3>
+                        <p>Align wellness choices with core values for sustainable health habits.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">💼</span>
+                        <h3>Career & Purpose</h3>
+                        <p>Find work that matters and build careers aligned with personal values.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">❤️</span>
+                        <h3>Relationships</h3>
+                        <p>Create deeper connections through values-based communication.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">💰</span>
+                        <h3>Financial Freedom</h3>
+                        <p>Make money decisions that align with life goals and values.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">🎨</span>
+                        <h3>Creativity</h3>
+                        <p>Unlock creative potential by removing values conflicts.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll">
+                        <span class="why-icon">🌍</span>
+                        <h3>Contribution & Spirituality</h3>
+                        <p>Find meaning through service and spiritual alignment.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="cta-section" id="cta">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to build a business that makes a difference?</h2>
-                    <p>Partner with us and empower others to live a more purpose-driven life while you earn.</p>
+                    <h2>Ready to Build a Business That Makes a Difference?</h2>
+                    <p>Join successful affiliates earning recurring income while helping people transform their lives through values alignment.</p>
                     <div class="cta-buttons">
                         <a href="#" class="button button-large">Join the Affiliate Program</a>
-                        <a href="#" class="button button-secondary button-large">Contact Us</a>
+                        <a href="#" class="button button-secondary button-large">Schedule a Call</a>
                     </div>
                 </div>
             </div>
@@ -950,7 +1218,6 @@
                 <a href="#" class="social-icon-link footer-icon" aria-label="YouTube">
                     <img src="images/icons/youtube.svg" alt="YouTube">
                 </a>
-                <!-- Added Pinterest Icon -->
                 <a href="#" class="social-icon-link footer-icon" aria-label="Pinterest">
                     <img src="images/icons/pintrest.svg" alt="Pinterest">
                 </a>
@@ -960,12 +1227,14 @@
                 <a href="#">Terms & Conditions</a>
                 <span>|</span>
                 <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Affiliate Agreement</a>
             </div>
         </div>
     </footer>
 
     <div class="mobile-sticky-cta" id="mobile-sticky-cta">
-        <a href="#cta" class="button button-small">Join Now</a>
+        <a href="#cta" class="button button-small">Join Affiliate Program</a>
     </div>
 
     <script>
