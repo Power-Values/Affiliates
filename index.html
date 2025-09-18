@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Values - Affiliate Program</title>
-    
+
     <link rel="icon" type="image/png" href="images/faviconnew.svg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700;800&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* --- COMPLETE STYLES --- */
         :root {
@@ -26,8 +28,16 @@
             --shadow-strong: 0 10px 40px rgba(94, 37, 58, 0.15);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--dark-text);
@@ -37,16 +47,26 @@
             -moz-osx-font-smoothing: grayscale;
             font-size: clamp(16px, 1.1vw, 18px);
         }
-        body.no-scroll { overflow: hidden; }
 
-        h1, h2, h3, h4 {
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-heading);
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 0.75rem;
             color: var(--primary-color);
         }
-        h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+        }
+
         h2 {
             font-size: clamp(2rem, 4vw, 2.75rem);
             background: linear-gradient(45deg, var(--primary-color) 30%, var(--muted-purple) 70%);
@@ -54,8 +74,14 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
-        h4 { font-size: clamp(1.1rem, 2vw, 1.2rem); }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        h4 {
+            font-size: clamp(1.1rem, 2vw, 1.2rem);
+        }
 
         /* Header & Navigation */
         .header {
@@ -68,38 +94,165 @@
             z-index: 1000;
             transition: background-color 0.4s ease, box-shadow 0.4s ease;
         }
+
         .header.scrolled {
             background-color: rgba(255, 255, 255, 0.85);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 30px rgba(94, 37, 58, 0.1);
         }
-        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; }
-        .header-actions { display: flex; align-items: center; gap: 0.5rem; }
-        .logo-image { height: 40px; }
-        .nav { position: relative; }
-        .menu-toggle { cursor: pointer; z-index: 1001; position: relative; padding: 0.5rem; background: none; border: none; }
-        .menu-icon { display: block; width: 30px; height: 22px; position: relative; }
-        .menu-icon span { display: block; position: absolute; height: 3px; width: 100%; background: var(--primary-color); border-radius: 3px; left: 0; transition: all 0.25s ease-in-out; }
-        .menu-icon span:nth-child(1) { top: 0px; }
-        .menu-icon span:nth-child(2) { top: 9px; }
-        .menu-icon span:nth-child(3) { top: 18px; }
-        .menu-toggle.active .menu-icon span:nth-child(1) { top: 9px; transform: rotate(135deg); }
-        .menu-toggle.active .menu-icon span:nth-child(2) { opacity: 0; left: -60px; }
-        .menu-toggle.active .menu-icon span:nth-child(3) { top: 9px; transform: rotate(-135deg); }
-        .nav-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: linear-gradient(135deg, var(--primary-color), var(--muted-purple)); display: flex; flex-direction: column; justify-content: center; align-items: center; list-style: none; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); z-index: 999; }
-        .nav-menu.active { right: 0; }
-        .nav-menu li { margin: 1.25rem 0; }
-        .nav-link { color: #fff; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; }
-        .nav-link:hover { color: var(--accent-color); background-color: rgba(255, 255, 255, 0.1); }
-        .nav-link.nav-link-active { color: var(--accent-color); background-color: rgba(255, 255, 255, 0.1); }
-        
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-image {
+            height: 40px;
+        }
+
+        .nav {
+            position: relative;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 30px;
+            height: 22px;
+            position: relative;
+        }
+
+        .menu-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--primary-color);
+            border-radius: 3px;
+            left: 0;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .menu-icon span:nth-child(1) {
+            top: 0px;
+        }
+
+        .menu-icon span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-icon span:nth-child(3) {
+            top: 18px;
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-menu li {
+            margin: 1.25rem 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.nav-link-active {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         @media (min-width: 769px) {
-            .menu-toggle { display: none; }
-            .nav-menu { position: static; right: auto; width: auto; height: auto; background: transparent; flex-direction: row; }
-            .nav-menu li { margin: 0 0 0 0.5rem; }
-            .nav-link { color: var(--primary-color); font-size: 1rem; background: transparent; padding: 0.5rem 1.25rem; border-radius: 50px; }
-            .nav-link:hover { color: var(--muted-purple); background: rgba(94, 37, 58, 0.07); }
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-menu {
+                position: static;
+                right: auto;
+                width: auto;
+                height: auto;
+                background: transparent;
+                flex-direction: row;
+            }
+
+            .nav-menu li {
+                margin: 0 0 0 0.5rem;
+            }
+
+            .nav-link {
+                color: var(--primary-color);
+                font-size: 1rem;
+                background: transparent;
+                padding: 0.5rem 1.25rem;
+                border-radius: 50px;
+            }
+
+            .nav-link:hover {
+                color: var(--muted-purple);
+                background: rgba(94, 37, 58, 0.07);
+            }
+
             .nav-link.nav-link-active {
                 background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%);
                 color: var(--primary-color);
@@ -108,13 +261,58 @@
         }
 
         /* Utility Classes */
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        section { padding: 3rem 0; overflow-x: clip; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 2rem auto; }
-        .button { display: inline-block; padding: 0.9rem 2.25rem; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: var(--shadow-subtle); text-align: center; border: none; border-bottom: 4px solid #c1a82b; background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%); background-size: 200% auto; color: var(--primary-color); transition: all 0.2s ease-in-out; }
-        .button:hover { transform: translateY(-2px); box-shadow: var(--shadow-strong); background-position: right center; }
-        .button:active { transform: translateY(2px); box-shadow: 0 4px 15px rgba(94, 37, 58, 0.1); border-bottom-width: 2px; }
-        .button-large { font-size: 1.25rem; padding: 1.1rem 2.8rem; }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 3rem 0;
+            overflow-x: clip;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.9rem 2.25rem;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            border: none;
+            border-bottom: 4px solid #c1a82b;
+            background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%);
+            background-size: 200% auto;
+            color: var(--primary-color);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-strong);
+            background-position: right center;
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 15px rgba(94, 37, 58, 0.1);
+            border-bottom-width: 2px;
+        }
+
+        .button-large {
+            font-size: 1.25rem;
+            padding: 1.1rem 2.8rem;
+        }
+
         .button-secondary {
             background-image: none;
             background-color: white;
@@ -122,13 +320,19 @@
             border-bottom: 4px solid #f0f0f0;
             color: var(--primary-color);
         }
+
         .button-secondary:hover {
             background-color: var(--primary-color);
             color: #fff;
             border: 2px solid var(--primary-color);
             border-bottom: 4px solid var(--muted-purple);
         }
-        .button-small { padding: 0.6rem 1.5rem; font-size: 0.9rem; border-bottom-width: 3px; }
+
+        .button-small {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            border-bottom-width: 3px;
+        }
 
         /* General Sections */
         .general-content {
@@ -139,7 +343,8 @@
         .affiliate-hero {
             background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
             color: white;
-            padding: 6rem 0; /* Fallback for older browsers */
+            padding: 6rem 0;
+            /* Fallback for older browsers */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -147,8 +352,10 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            margin-top: 3rem; /* Pushes the hero section down by 3rem */
+            margin-top: 3rem;
+            /* Pushes the hero section down by 3rem */
         }
+
         .affiliate-hero::before {
             content: '';
             position: absolute;
@@ -157,15 +364,17 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at top left, rgba(249, 226, 102, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at bottom right, rgba(249, 226, 102, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at bottom right, rgba(249, 226, 102, 0.1) 0%, transparent 50%);
             z-index: 1;
         }
+
         .affiliate-hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
             padding: 0 1rem;
         }
+
         .affiliate-hero h1 {
             color: white;
             font-size: clamp(2rem, 7vw, 4rem);
@@ -173,6 +382,7 @@
             text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
             margin-bottom: 1.5rem;
         }
+
         .affiliate-hero p {
             font-size: clamp(1rem, 2vw, 1.4rem);
             max-width: 800px;
@@ -193,6 +403,7 @@
             overflow: hidden;
             text-align: center;
         }
+
         .card::before {
             content: '';
             position: absolute;
@@ -204,52 +415,167 @@
             transform: translateX(-100%);
             transition: transform 0.4s ease;
         }
+
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(94, 37, 58, 0.12);
             border-color: rgba(94, 37, 58, 0.15);
         }
+
         .card:hover::before {
             transform: translateX(0);
         }
-        
-        .commission-section { padding: 3rem 0; }
-        .commission-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem auto; }
-        .commission-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .commission-card { text-align: left; }
-        .commission-card h3 { color: var(--primary-color); font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; display: inline-block; }
-        .commission-list { list-style: none; padding: 0; margin-top: 1rem; }
-        .commission-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; line-height: 1.6; }
-        .commission-list li::before { content: '✓'; position: absolute; left: 0; color: var(--secondary-accent); font-weight: bold; }
-        .commission-price { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); font-family: var(--font-heading); margin-top: 1rem; }
-        .commission-description { color: var(--muted-purple); font-size: 0.9rem; margin-top: 0.5rem; }
 
-        .products-section { background-color: #fdf8fa; padding: 3rem 0; }
-        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
-        .product-card { padding: 1.5rem; }
+        .commission-section {
+            padding: 3rem 0;
+        }
+
+        .commission-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .commission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .commission-card {
+            text-align: left;
+        }
+
+        .commission-card h3 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .commission-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .commission-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .commission-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-accent);
+            font-weight: bold;
+        }
+
+        .commission-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            font-family: var(--font-heading);
+            margin-top: 1rem;
+        }
+
+        .commission-description {
+            color: var(--muted-purple);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .products-section {
+            background-color: #fdf8fa;
+            padding: 3rem 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            padding: 1.5rem;
+        }
+
         .product-image-container {
             width: 100%;
-            height: 300px; /* Or a fixed aspect ratio like padding-top: 100% */
+            height: 300px;
+            /* Or a fixed aspect ratio like padding-top: 100% */
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 1rem;
             overflow: hidden;
         }
+
         .product-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Use 'contain' to fit the whole image without cropping */
+            object-fit: contain;
+            /* Use 'contain' to fit the whole image without cropping */
             border-radius: 8px;
         }
-        .product-card h3 { font-size: 1.3rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-        .product-card p { font-size: 1rem; color: var(--dark-text); }
 
-        .audience-section { padding: 3rem 0; }
-        .audience-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; list-style: none; padding: 0; margin-top: 2rem; }
-        .audience-list li { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2.5rem; }
-        .audience-icon { font-size: 2.5rem; color: var(--secondary-accent); background: rgba(28, 98, 100, 0.1); width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; border-radius: 50%; margin-bottom: 1rem; }
-        .audience-text { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; }
+        .product-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: var(--dark-text);
+        }
+
+        .audience-section {
+            padding: 3rem 0;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .audience-list li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        .audience-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-accent);
+            background: rgba(28, 98, 100, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .audience-text {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
 
         /* Call To Action Section */
         .cta-section {
@@ -257,18 +583,21 @@
             padding: 3rem 0;
             text-align: center;
         }
+
         .cta-content h2 {
             color: white;
             background: none;
             -webkit-text-fill-color: white;
             margin-bottom: 1rem;
         }
+
         .cta-content p {
             color: white;
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 1.5rem;
         }
+
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -279,39 +608,46 @@
         /* Footer */
         footer {
             background-color: var(--primary-color);
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             padding: 2rem 0;
         }
+
         .footer-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
         }
+
         .footer-social {
             display: flex;
             gap: 0.5rem;
         }
+
         .footer-copy {
             text-align: center;
             font-size: 0.9rem;
         }
+
         .footer-legal {
             display: flex;
             gap: 0.75rem;
             align-items: center;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
+
         .footer-legal a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .footer-legal a:hover {
             color: #fff;
             text-decoration: underline;
         }
+
         .social-icon-link {
             display: inline-flex;
             justify-content: center;
@@ -321,12 +657,14 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
+
         .social-icon-link img {
             width: 24px;
             height: 24px;
             display: block;
             transition: filter 0.3s ease;
         }
+
         .social-icon-link.footer-icon:hover {
             transform: translateY(-3px);
             background-color: rgba(255, 255, 255, 0.1);
@@ -350,6 +688,7 @@
             visibility: hidden;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
         .mobile-sticky-cta.visible {
             opacity: 1;
             transform: translateY(0);
@@ -362,6 +701,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
@@ -372,38 +712,66 @@
             .commission-grid {
                 grid-template-columns: 1fr;
             }
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
+
             .audience-list {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .header-cta { display: none; }
-            .container { width: 95%; }
-            .affiliate-hero { padding: 6rem 0; }
-            .affiliate-hero h1 { font-size: clamp(1.75rem, 9vw, 3rem); }
-            .affiliate-hero p { font-size: clamp(0.95rem, 3vw, 1.2rem); }
-            .commission-card { padding: 1.5rem; }
-            .product-card { padding: 1rem; }
-            .audience-list li { padding: 1.5rem; }
+            .header-cta {
+                display: none;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .affiliate-hero {
+                padding: 6rem 0;
+            }
+
+            .affiliate-hero h1 {
+                font-size: clamp(1.75rem, 9vw, 3rem);
+            }
+
+            .affiliate-hero p {
+                font-size: clamp(0.95rem, 3vw, 1.2rem);
+            }
+
+            .commission-card {
+                padding: 1.5rem;
+            }
+
+            .product-card {
+                padding: 1rem;
+            }
+
+            .audience-list li {
+                padding: 1.5rem;
+            }
+
             .mobile-sticky-cta .button {
                 width: 100%;
                 max-width: 400px;
             }
         }
-        
-        @media (min-width: 769px) {
-            .mobile-sticky-cta { display: none; }
-        }
 
+        @media (min-width: 769px) {
+            .mobile-sticky-cta {
+                display: none;
+            }
+        }
     </style>
 </head>
+
 <body>
-    
+
     <header class="header">
         <div class="container header-container">
             <div class="logo">
@@ -430,18 +798,16 @@
                         <li><a href="#" class="nav-link nav-link-active">Affiliates</a></li>
                     </ul>
                 </nav>
-                <div class="header-cta">
-                    <a href="#cta" class="button button-small">Get Started</a>
-                </div>
             </div>
         </div>
     </header>
-    
+
     <main>
         <section class="affiliate-hero animate-on-scroll">
             <div class="container affiliate-hero-content">
                 <h1>The Power Values Affiliate Program</h1>
-                <p>Join our mission and earn recurring and high-ticket commissions by helping people live lives of purpose, clarity, and alignment.</p>
+                <p>Join our mission and earn recurring and high-ticket commissions by helping people live lives of
+                    purpose, clarity, and alignment.</p>
                 <a href="#cta" class="button button-large">Start Earning Now</a>
             </div>
         </section>
@@ -450,20 +816,24 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2>Lucrative Commissions, Unmatched Value</h2>
-                    <p>Our program is designed for partners who want to build a sustainable, high-impact business.</p>
+                    <p>Our program is designed for partners who to build a sustainable, high-impact business.</p>
                 </div>
                 <div class="commission-grid">
                     <div class="card commission-card animate-on-scroll">
                         <h3>High-Ticket Commissions</h3>
-                        <p>Earn significant commissions on our premium coaching programs, which are a perfect fit for high-value clients.</p>
+                        <p>Earn significant commissions on our premium coaching programs, which are a perfect fit for
+                            high-value clients.</p>
                         <ul class="commission-list">
-                            <li><strong>Group Coaching:</strong> Earn up to $1,500 per person from our $5,000 programs.</li>
-                            <li><strong>Private Coaching:</strong> Earn up to $3,000 per person from our $10,000 programs.</li>
+                            <li><strong>Group Coaching:</strong> Earn up to $1,500 per person from our $5,000 programs.
+                            </li>
+                            <li><strong>Private Coaching:</strong> Earn up to $3,000 per person from our $10,000
+                                programs.</li>
                         </ul>
                     </div>
                     <div class="card commission-card animate-on-scroll">
                         <h3>Recurring Revenue</h3>
-                        <p>Our membership model is built for high retention, giving you a predictable, passive income stream.</p>
+                        <p>Our membership model is built for high retention, giving you a predictable, passive income
+                            stream.</p>
                         <ul class="commission-list">
                             <li><strong>Grounded Membership:</strong> Earn $8.10/month per referral.</li>
                             <li><strong>Empowered Membership:</strong> Earn $14.10/month per referral.</li>
@@ -473,7 +843,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="products-section">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -556,9 +926,9 @@
                 </div>
             </div>
         </section>
-        
+
     </main>
-    
+
     <footer>
         <div class="container footer-container">
             <div class="footer-social">
@@ -580,6 +950,10 @@
                 <a href="#" class="social-icon-link footer-icon" aria-label="YouTube">
                     <img src="images/icons/youtube.svg" alt="YouTube">
                 </a>
+                <!-- Added Pinterest Icon -->
+                <a href="#" class="social-icon-link footer-icon" aria-label="Pinterest">
+                    <img src="images/icons/pintrest.svg" alt="Pinterest">
+                </a>
             </div>
             <p class="footer-copy">&copy; 2025 Power Values. All Rights Reserved.</p>
             <div class="footer-legal">
@@ -589,83 +963,84 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="mobile-sticky-cta" id="mobile-sticky-cta">
         <a href="#cta" class="button button-small">Join Now</a>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // Mobile Navigation
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const body = document.body;
-        
-        if(menuToggle && navMenu) {
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                body.classList.toggle('no-scroll');
-            });
+        document.addEventListener('DOMContentLoaded', function () {
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        menuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        body.classList.remove('no-scroll');
+            // Mobile Navigation
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body;
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    body.classList.toggle('no-scroll');
+                });
+
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navMenu.classList.contains('active')) {
+                            menuToggle.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            body.classList.remove('no-scroll');
+                        }
+                    });
+                });
+            }
+
+            // On-scroll Reveal Animations
+            const scrollElements = document.querySelectorAll(".animate-on-scroll");
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+            };
+            const displayScrollElement = (element) => element.classList.add("visible");
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
                     }
                 });
-            });
-        }
-
-        // On-scroll Reveal Animations
-        const scrollElements = document.querySelectorAll(".animate-on-scroll");
-        const elementInView = (el, dividend = 1) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
-        };
-        const displayScrollElement = (element) => element.classList.add("visible");
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 1.25)) {
-                    displayScrollElement(el);
-                }
-            });
-        };
-        handleScrollAnimation();
-        window.addEventListener("scroll", handleScrollAnimation);
-
-        // Header Scroll Effect
-        const header = document.querySelector('.header');
-        if (header) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }
-
-        // Mobile Sticky CTA
-        const mobileCta = document.getElementById('mobile-sticky-cta');
-        const footer = document.querySelector('footer');
-        if (mobileCta && footer) {
-            const toggleCtaOnScroll = () => {
-                const footerRect = footer.getBoundingClientRect();
-                if (window.scrollY > (window.innerHeight * 0.8) && footerRect.top > window.innerHeight) {
-                    mobileCta.classList.add('visible');
-                } else {
-                    mobileCta.classList.remove('visible');
-                }
             };
-            window.addEventListener('scroll', toggleCtaOnScroll);
-            toggleCtaOnScroll();
-        }
-    });
+            handleScrollAnimation();
+            window.addEventListener("scroll", handleScrollAnimation);
+
+            // Header Scroll Effect
+            const header = document.querySelector('.header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Mobile Sticky CTA
+            const mobileCta = document.getElementById('mobile-sticky-cta');
+            const footer = document.querySelector('footer');
+            if (mobileCta && footer) {
+                const toggleCtaOnScroll = () => {
+                    const footerRect = footer.getBoundingClientRect();
+                    if (window.scrollY > (window.innerHeight * 0.8) && footerRect.top > window.innerHeight) {
+                        mobileCta.classList.add('visible');
+                    } else {
+                        mobileCta.classList.remove('visible');
+                    }
+                };
+                window.addEventListener('scroll', toggleCtaOnScroll);
+                toggleCtaOnScroll();
+            }
+        });
     </script>
 </body>
+
 </html>
